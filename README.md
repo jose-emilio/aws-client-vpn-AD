@@ -35,7 +35,7 @@ En este repositorio se muestra cómo se puede configurar un punto de enlace de A
 
         REGION=us-east-1
 
-5. Se importan el certificado del servicio Client VPN a AWS Certificate Manager (ACM):
+5. Se importa el certificado del servicio Client VPN a AWS Certificate Manager (ACM):
 
         certserver=$(aws acm import-certificate --certificate fileb://~/certs/server.crt --private-key fileb://~/certs/server.key --certificate-chain fileb://~/certs/ca.crt --output text --region $REGION)
 
