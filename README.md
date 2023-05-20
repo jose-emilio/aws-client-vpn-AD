@@ -164,7 +164,7 @@ En la imagen anterior, se ha creado el usuario `joseemilio@clientvpn.com`.
 
         https://self-service.clientvpn.amazonaws.com/
 
-Esta URL va a permitir, introduciendo el Id del punto de enlace creado (almacenado en la variable `$vpnId`) y las credenciales del usuario creado en el AD, poder obtener el archivo de configuración del cliente VPN. El nombre del Id de la Client VPN se puede obtener como:
+Esta URL es el portal de autoservicio de AWS Client VPN y va a permitir, introduciendo el Id del punto de enlace creado (almacenado en la variable `$vpnId`) y las credenciales del usuario del AD, poder obtener el archivo de configuración del cliente VPN. El nombre del Id de la Client VPN se puede obtener como:
 
         echo $vpnId
 
@@ -176,7 +176,7 @@ Esta URL va a permitir, introduciendo el Id del punto de enlace creado (almacena
 
 Presionando el botón de `Download client configuration` se descargará el archivo de configuración.
 
-23. Por último, importar el perfil del archivo descargado con el cliente OpenVPN elegido. Realizar la conexión e introducir las credenciales del usuario del AD:
+23. Por último, se importa el perfil del archivo descargado con el cliente OpenVPN elegido. Realizar la conexión e introducir las credenciales del usuario del AD:
 
 ![image-11.png](/images/image-11.png)
 
