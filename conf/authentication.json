@@ -1,0 +1,8 @@
+[
+    {
+      "Type": "directory-service-authentication",
+      "ActiveDirectory": {
+        "DirectoryId": "<directorio>"
+      }
+    }
+]
