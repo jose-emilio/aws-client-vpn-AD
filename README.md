@@ -1,4 +1,4 @@
-# Creación y acceso a un punto de enlace de AWS Client VPN mediante autenticación mutua
+# Creación y acceso a un punto de enlace de AWS Client VPN mediante autenticación basada en Active Directory
 **AWS Client VPN** es un servicio administrado de VPN que permite establecer conexiones <em>Host-to-Site</em> para acceder a los recursos de AWS (e Internet) a través de clientes OpenVPN.
 
 AWS Client VPN permite autenticar a los usuarios bien mediante certificados de cliente (autenticación mutua), bien mediante un AD, o bien a través de un proveedor de identidades compatible con SAML2.0.
