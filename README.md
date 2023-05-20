@@ -39,7 +39,7 @@ En este repositorio se muestra cómo se puede configurar un punto de enlace de A
 
         certserver=$(aws acm import-certificate --certificate fileb://~/certs/server.crt --private-key fileb://~/certs/server.key --certificate-chain fileb://~/certs/ca.crt --output text --region $REGION)
 
-6. A continuación, crearemos un grupo de logs en Amazon CloudWatch para registrar las conexiones de los clientes VPN:
+6. A continuación, se crea un grupo de logs en Amazon CloudWatch para registrar las conexiones de los clientes VPN:
 
         aws logs create-log-group --log-group-name client-vpn-log --region $REGION
 
