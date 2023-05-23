@@ -116,32 +116,46 @@ En este repositorio se muestra cómo se puede configurar un punto de enlace de A
 
 13. Hay que unir la instancia EC2 al dominio `clientvpn.com`. Previamente se configuran los servidores DNS para poder resolver dicho dominio. Los servidores DNS de Simple AD resuelven el dominio `clientvpn.com` y redirigen el resto de consultas a los servidores administrados de AWS en la VPC. Se modifican los parámetros indicados en la configuración de la red:
 
-![image-01.png](/images/image-01.png)
+<p align="center">
+  <img src="images/image-01.png">
+</p>
 
 14. Para unir la instancia EC2 al dominio, se cambia del grupo de trabajo al dominio `clientvpn.com` y se introducen las credenciales del usuario `Administrator` del dominio con la contraseña indicada durante la creación del Simple AD:
 
-![image-02.png](/images/image-02.png)
+<p align="center">
+  <img src="images/image-02.png">
+</p>
 
-![image-03.png](/images/image-03.png)
+<p align="center">
+  <img src="images/image-03.png">
+</p>
 
 Habrá que reiniciar la instancia EC2 tras el proceso. De nuevo, se realiza la conexión RDP con la instancia EC2, pero en esta ocasión hay que realizar la autenticación con el usuario Administrador del dominio, es decir `Administrator@clientvpn.com` y la contraseña indicada, en el caso de este ejemplo `Client_VPN_AD$`.
 
 14. A continuación se instalan las `Herramientas de AD` para poder crear un usuario de AD de prueba, que se utilizará para la conexión al punto de enlace de Client VPN. Para ello se selecciona la opción 2 `Agregar roles y características` desde el `Administrador del Servidor`:
 
-![image-04.png](/images/image-04.png)
+<p align="center">
+  <img src="images/image-04.png">
+</p>
 
 
 15. En el asistente siguiente, en el apartado `Selección del servidor` se verifica que la instancia EC2 aparece en el Grupo de Servidores:
 
-![image-05.png](/images/image-05.png)
+<p align="center">
+  <img src="images/image-05.png">
+</p>
 
 16. Se marcan en el apartado `Características`, dentro del grupo `Herramientas de administración remota del servidor`, las opciones `Herramientas de AD DS y AD LDS` así como `Herramientas del servidor DNS` y se confirma la instalación:
 
-![image-06.png](/images/image-06.png)
+<p align="center">
+  <img src="images/image-06.png">
+</p>
 
 17. Por último, se accede a la herramienta `Usuarios y equipos de Active Directory` y se añade un usuario de prueba y se establece la contraseña:
 
-![image-07.png](/images/image-07.png)
+<p align="center">
+  <img src="images/image-07.png">
+</p>
 
 En la imagen anterior, se ha creado el usuario `joseemilio@clientvpn.com`.
 
@@ -177,17 +191,24 @@ Esta URL es el portal de autoservicio de AWS Client VPN y va a permitir, introdu
 
         echo $vpnId
 
-![image-08.png](/images/image-08.png)
+<p align="center">
+  <img src="images/image-08.png">
+</p>
 
-![image-09.png](/images/image-09.png)
-
-![image-10.png](/images/image-10.png)
+<p align="center">
+  <img src="images/image-09.png">
+</p>
+<p align="center">
+  <img src="images/image-10.png">
+</p>
 
 Presionando el botón de `Download client configuration` se descargará el archivo de configuración.
 
 23. Por último, se importa el perfil del archivo descargado con el cliente OpenVPN elegido. Realizar la conexión e introducir las credenciales del usuario del AD:
 
-![image-11.png](/images/image-11.png)
+<p align="center">
+  <img src="images/image-11.png">
+</p>
 
 16. Ejecutar el comando `route -n` para comprobar que la ruta por defecto tiene como puerta de enlace la IP del túnel creado por la conexión contra el punto de enlace de Client VPN.
 
