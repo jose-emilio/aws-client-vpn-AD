@@ -5,7 +5,9 @@ AWS Client VPN permite autenticar a los usuarios bien mediante certificados de c
 
 En este repositorio se muestra cómo se puede configurar un punto de enlace de AWS Client VPN mediante autenticación AD (<em>Active Directory</em>) y cómo realizar una conexión contra dicho punto de enlace.
 
-![AWS Client VPN](/images/client-vpn.png)
+<p align="center">
+  <img src="images/client-vpn.png">
+</p>
 
 ## Servicios utilizados
 * **Amazon VPC** para el despliegue de la infraestructura de red altamente disponible de este escenario
