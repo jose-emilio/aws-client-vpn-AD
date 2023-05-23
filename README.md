@@ -1,27 +1,33 @@
 # Creación y acceso a un punto de enlace de AWS Client VPN mediante autenticación basada en Active Directory
+
+## **Objetivo**
+
 **AWS Client VPN** es un servicio administrado de VPN que permite establecer conexiones <em>Host-to-Site</em> para acceder a los recursos de AWS (e Internet) a través de clientes OpenVPN.
 
 AWS Client VPN permite autenticar a los usuarios bien mediante certificados de cliente (autenticación mutua), bien mediante un AD, o bien a través de un proveedor de identidades compatible con SAML2.0.
 
 En este repositorio se muestra cómo se puede configurar un punto de enlace de AWS Client VPN mediante autenticación AD (<em>Active Directory</em>) y cómo realizar una conexión contra dicho punto de enlace.
 
+## **Requerimientos**
+
+* Disponer de el software `easyrsa` (https://github.com/OpenVPN/easy-rsa) instalado en la máquina cliente
+* Disponer de una cuenta de AWS o de acceso a un sandbox de AWS Academy Learner Lab
+* Disponer de un entorno Linux con acceso programático configurado a los servicios de AWS
+
+## **Arquitectura propuesta**
+
 <p align="center">
   <img src="images/client-vpn.png">
 </p>
 
-## Servicios utilizados
+## **Servicios utilizados**
 * **Amazon VPC** para el despliegue de la infraestructura de red altamente disponible de este escenario
 * **AWS Client VPN** para la configuración y despliegue del punto de enlace OpenVPN
 * **AWS Certificate Manager (ACM)** para la importación del certificado de servidor
 * **AWS Directory Service** para el despliegue de un Active Directory administrado altamente disponible que será utilizado como proveedor de identidad para la autenticación sobre el punto de enlace de AWS Client VPN
 * **Amazon CloudWatch Logs** para registrar las conexiones contra el punto de enlace de AWS Client VPN
 
-## Requerimientos
-* Disponer de el software `easyrsa` (https://github.com/OpenVPN/easy-rsa) instalado en la máquina cliente
-* Disponer de una cuenta de AWS o de acceso a un sandbox de AWS Academy Learner Lab
-* Disponer de un entorno Linux con acceso programático configurado a los servicios de AWS
-
-## Instrucciones
+## **Instrucciones**
 1. Si no se ha realizado ya, es necesario crear una nueva PKI (<em>Public Key Infrastructure</em>) y una CA (<em>Certificate Authority</em>) para emitir certificados de confianza.
     
         /usr/share/easy-rsa/easyrsa init-pki
